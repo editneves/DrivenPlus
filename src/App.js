@@ -11,7 +11,7 @@ export default function App() {
     cpf: '',
     password: '',
   })
-
+  
   const [creditCard, setCreditCard] = useState({
     membershipId: 0,
     cardName: '',
@@ -23,6 +23,14 @@ export default function App() {
   const [user, setUser] = useState(null)
   const [planos, setPlanos] = useState(null)
   const [plano, setPlano] = useState(null)
+
+  const [usuario, setUsuario] = useState({
+    name: '',
+    cpf: '',
+    email: '',
+    currentPassword: '',
+    newPassword: '',
+  })
 
   return (
     <AuthContext.Provider
@@ -39,6 +47,8 @@ export default function App() {
         setPlano,
         creditCard,
         setCreditCard,
+        usuario, 
+        setUsuario,
       }}
     >
       <Container>

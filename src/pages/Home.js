@@ -1,6 +1,6 @@
 import { AuthContext } from "../components/AuthContext";
 import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../constants/urls";
 import styled from "styled-components";
@@ -37,13 +37,18 @@ const Home = () => {
   }, [navigate, user]);
 
   if (user === null || user?.membership === undefined) return <></>;
-  console.log("essee", user);
+  
   return (
     <>
       <Container>
         <Topo>
           <ImgPlano src={user.membership.image} alt="plan" />
-          <ImgUsuario src={Usuario} alt="user" />
+          <Link
+            style={{ textDecoration: "none", color: "white" }}
+            to={`/users/${user.id}`}
+          >
+            <ImgUsuario src={Usuario} alt="user" />
+          </Link>
         </Topo>
         <Texto> Olá, {user.name}</Texto>
         <Div>

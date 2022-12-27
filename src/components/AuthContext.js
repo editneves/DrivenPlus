@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext } from "react";
 
 export const AuthContext = createContext({
   form: {},
@@ -11,4 +11,6 @@ export const AuthContext = createContext({
   setPlanos: () => {},
   plano: {},
   setPlano: () => {},
-})
+  usuario: {},
+  setUsuario: () => {},
+});
